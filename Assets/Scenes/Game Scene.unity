@@ -323,16 +323,24 @@ MonoBehaviour:
   terrain_grid: {fileID: 144650797}
   upper_wall_tiles:
   - {fileID: 11400000, guid: fbc689a2501f9624cb53a79f48071451, type: 2}
+  - {fileID: 11400000, guid: 6c80876a304b7c446a3eae64156b6c8b, type: 2}
+  - {fileID: 11400000, guid: d046ef149039efe4d975c7f4d3affdef, type: 2}
+  - {fileID: 11400000, guid: 847ac69f634c6c844a5a23fa2d8e2a84, type: 2}
   lower_wall_tiles:
   - {fileID: 11400000, guid: 4caf0923ca252894eb73115f11441b9a, type: 2}
+  - {fileID: 11400000, guid: 8b740d07bd84e7145a8f1af895ca374d, type: 2}
+  - {fileID: 11400000, guid: 1439e331cf83b354d86c3a5df00cde7f, type: 2}
+  - {fileID: 11400000, guid: 108965bcfd5f42a488b50091956b1f47, type: 2}
   left_wall_tiles:
   - {fileID: 11400000, guid: 864f73adf9516174cb704698fbeaa9c1, type: 2}
+  - {fileID: 11400000, guid: a0cdc78e1a42e5547a8a4543770bd594, type: 2}
+  - {fileID: 11400000, guid: fd1398720e5f69d4cb833efbf97791dc, type: 2}
   right_wall_tiles:
   - {fileID: 11400000, guid: 6dd62ab78c3ba8344843db9a7f2aaced, type: 2}
+  - {fileID: 11400000, guid: e5a8125154b2ca64688e75025b86ed48, type: 2}
+  - {fileID: 11400000, guid: 89dc78dccb2669a45bb875d4d59da827, type: 2}
   upper_left_corner: {fileID: 11400000, guid: 11eccae5db9f5f744b4f5589f0d2409a, type: 2}
-  lower_left_corner: {fileID: 11400000, guid: 8b740d07bd84e7145a8f1af895ca374d, type: 2}
   upper_right_corner: {fileID: 11400000, guid: 0d3de257fceff5d4893980883449eb8e, type: 2}
-  lower_right_corner: {fileID: 11400000, guid: 8b740d07bd84e7145a8f1af895ca374d, type: 2}
 --- !u!1 &708079353
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,8 +607,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1573675874}
-  m_RootOrder: 4
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1094986264
 GameObject:
@@ -815,7 +823,6 @@ Transform:
   - {fileID: 708079354}
   - {fileID: 144650795}
   - {fileID: 934578619}
-  - {fileID: 1060090978}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

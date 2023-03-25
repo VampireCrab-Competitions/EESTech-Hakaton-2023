@@ -11,9 +11,7 @@ public class terrain_map_generator : MonoBehaviour
     public Tile[] left_wall_tiles;
     public Tile[] right_wall_tiles;
     public Tile upper_left_corner;
-    public Tile lower_left_corner;
     public Tile upper_right_corner;
-    public Tile lower_right_corner;
 
     private int map_size;
 
@@ -21,7 +19,12 @@ public class terrain_map_generator : MonoBehaviour
     void Start()
     {
         map_size = transform.parent.GetComponent<grid_map_fields>().map_size;
-        
+
+        InstantiateBorderWalls(map_size);
+    }
+
+    private void InstantiateBorderWalls(int map_size)
+    {
         InstantiateLowerWall(map_size);
         InstantiateUpperWall(map_size);
         InstantiateLeftWall(map_size);
@@ -29,7 +32,7 @@ public class terrain_map_generator : MonoBehaviour
         InstantiateUpperCorners(map_size);
     }
 
-    private void InstantiateUpperCorners(int mapSize)
+    private void InstantiateUpperCorners(int map_size)
     {
         terrain_grid.SetTile(new Vector3Int(-1, map_size, 0),
             upper_left_corner);
@@ -39,9 +42,9 @@ public class terrain_map_generator : MonoBehaviour
         //terrain_grid.SetTile(new Vector3Int(map_size, -1, 0), lower_right_corner);
     }
 
-    private void InstantiateUpperWall(int mapSize)
+    private void InstantiateUpperWall(int map_size)
     {
-        for (int x = 0, y = mapSize; x < map_size; x++)
+        for (int x = 0, y = map_size; x < map_size; x++)
         {
             terrain_grid.SetTile(new Vector3Int(x, y, 0),
                 upper_wall_tiles[Random.Range(0, upper_wall_tiles.Length)]);
@@ -57,7 +60,7 @@ public class terrain_map_generator : MonoBehaviour
         }
     }
 
-    private void InstantiateRightWall(int mapSize)
+    private void InstantiateRightWall(int map_size)
     {
         for (int x = map_size, y = 0; y < map_size; y++)
         {
@@ -66,17 +69,12 @@ public class terrain_map_generator : MonoBehaviour
         }
     }
 
-    private void InstantiateLeftWall(int mapSize)
+    private void InstantiateLeftWall(int map_size)
     {
         for (int x = -1, y = 0; y < map_size; y++)
         {
             terrain_grid.SetTile(new Vector3Int(x, y, 0),
                 left_wall_tiles[Random.Range(0, left_wall_tiles.Length)]);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 }

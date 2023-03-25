@@ -13,27 +13,27 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Tilemap colisionTilemap;
     
-    private PlayerMovement controls;
+    private PlayerMovement _controls;
 
     private void Awake()
     {
-        controls = new PlayerMovement();
+        _controls = new PlayerMovement();
     }
 
     private void OnEnable()
     {
-        controls.Enable();
+        _controls.Enable();
     }
 
     private void OnDisable()
     {
-        controls.Disable();
+        _controls.Disable();
     }
 
     // Start is called before the first frame update 
     void Start()
     {
-        controls.Main.Movement.performed += context => Move(context.ReadValue<Vector2>());
+        _controls.Main.Movement.performed += context => Move(context.ReadValue<Vector2>());
     }
 
     private void Move(Vector2 direction)
@@ -42,14 +42,13 @@ public class PlayerController : MonoBehaviour
         if (CanMove(direction))
         {
             transform.position += (Vector3)direction;
-
         }
     }
 
     private bool CanMove(Vector2 direction)
     {
         Vector3Int gridPosition = floorTilemap.WorldToCell(transform.position + (Vector3)direction);
-
+        
         return floorTilemap.HasTile(gridPosition) && !colisionTilemap.HasTile(gridPosition);
     }
 
@@ -59,27 +58,3 @@ public class PlayerController : MonoBehaviour
         
     }
 }
-
-
-
-
-// void Start()
-// {
-//     controls.Main.Movement.performed += context => Move(context.ReadValue<Vector2>());
-// }
-//
-// private void Move(Vector2 direction)
-// {
-//     if (CanMove(direction))
-//     {
-//         transform.position += (Vector3)direction;
-//
-//     }
-// }
-//
-// private bool CanMove(Vector2 direction)
-// {
-//     Vector3Int gridPosition = floorTilemap.WorldToCell(transform.position + (Vector3)direction);
-//
-//     return floorTilemap.HasTile(gridPosition) && !colisionTilemap.HasTile(gridPosition);
-// }

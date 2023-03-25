@@ -13,6 +13,7 @@ public class floor_map_generator : MonoBehaviour
     void Start()
     {
         map_size = transform.parent.GetComponent<grid_map_fields>().map_size;
+        
         for (int x = 0; x < map_size; x++)
         {
             for (int y = 0; y < map_size; y++)

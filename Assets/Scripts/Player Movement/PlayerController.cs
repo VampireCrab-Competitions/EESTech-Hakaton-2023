@@ -1,9 +1,12 @@
+using System;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    public event Action PlayerHasMoved = delegate { };
+
     [SerializeField] public static int coins;
 
     [SerializeField] public static int health = 10;
@@ -53,8 +56,11 @@ public class PlayerController : MonoBehaviour
         if (CanMove(direction))
         {
             transform.position += (Vector3)direction;
+            PlayerHasMoved?.Invoke();
         }
     }
+    
+    
 
     private bool CanMove(Vector2 direction)
     {

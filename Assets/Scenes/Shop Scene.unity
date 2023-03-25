@@ -522,6 +522,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 985285902}
+  - component: {fileID: 985285903}
   m_Layer: 0
   m_Name: Gold
   m_TagString: Untagged
@@ -546,6 +547,21 @@ Transform:
   m_Father: {fileID: 1049385572}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &985285903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985285901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e20e724259ec8946abd765b2c1ec527, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _coin: {fileID: 0}
+  _hp: {fileID: 0}
+  _store_coin: {fileID: 202723782}
 --- !u!1 &1049385568
 GameObject:
   m_ObjectHideFlags: 0

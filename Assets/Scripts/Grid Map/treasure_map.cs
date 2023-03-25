@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using Random = UnityEngine.Random;
 
 public class treasure_map : MonoBehaviour
 {
@@ -24,6 +26,12 @@ public class treasure_map : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        
+        //Destroy();
     }
 
     // Update is called once per frame

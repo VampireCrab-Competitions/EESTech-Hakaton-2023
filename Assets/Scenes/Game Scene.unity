@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 4226275}
   - component: {fileID: 4226277}
   - component: {fileID: 4226276}
+  - component: {fileID: 4226278}
   m_Layer: 0
   m_Name: Compass Hand
   m_TagString: Untagged
@@ -199,6 +200,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4226274}
   m_CullTransparentMesh: 1
+--- !u!114 &4226278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4226274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf54a86c8b015d04fa80b3c986331634, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2028412120}
+  compass_hand: {fileID: 4226274}
 --- !u!1 &68881508
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,6 +828,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 83f17220a38100140a992e1fb5e053cb, type: 2}
   upper_left_corner: {fileID: 11400000, guid: 11eccae5db9f5f744b4f5589f0d2409a, type: 2}
   upper_right_corner: {fileID: 11400000, guid: b862fda26a9dc0e4cb51347d4dbed9da, type: 2}
+  exit_tile: {fileID: 11400000, guid: 62e08b5a5b8a8d14792fe019a6e5a32a, type: 2}
 --- !u!66 &578358072
 CompositeCollider2D:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class floor_map_generator : MonoBehaviour
 {
     public Tilemap floor_grid;
     public Tile[] tiles;
+    //public Tile exit_tile;
     
     private int map_size;
     // Start is called before the first frame update
@@ -21,6 +22,8 @@ public class floor_map_generator : MonoBehaviour
                 floor_grid.SetTile(new Vector3Int(x,y,0), tiles[Random.Range(0,tiles.Length)]);
             }
         }
+        //floor_grid.SetTile(new Vector3Int(Random.Range((map_size - 1 - map_size/8),(map_size-1)), Random.Range((map_size - 1 - map_size / 8), (map_size - 1)),0),exit_tile);
+
     }
 
     // Update is called once per frame

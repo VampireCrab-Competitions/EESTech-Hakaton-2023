@@ -28,6 +28,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Tilemap colisionTilemap;
 
+    [SerializeField]
+    private Tilemap treasureTilemap;
+
+    [SerializeField]
+    private Tile[] treasureTiles;
+
     private PlayerMovement _controls;
     
     private void Awake()
@@ -48,6 +54,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update 
     void Start()
     {
+        coins = 0;
         _controls.Main.Movement.performed += context => Move(context.ReadValue<Vector2>());
     }
 
@@ -65,6 +72,22 @@ public class PlayerController : MonoBehaviour
         if (CanMove(direction))
         {
             transform.position += (Vector3)direction;
+            Vector3Int tile_coords = treasureTilemap.WorldToCell(transform.position);
+            if (treasureTilemap.HasTile(tile_coords))
+            {
+                TileBase tile = treasureTilemap.GetTile(tile_coords);
+                if (String.Equals(tile.name, treasureTiles[0].name))
+                {
+                    coins += 1;
+                } else if (String.Equals(tile.name, treasureTiles[1].name))
+                {
+                    health += 2;
+                } else if (String.Equals(tile.name, treasureTiles[2].name))
+                {
+                    coins += 5;
+                }
+                treasureTilemap.SetTile(tile_coords, null);
+            }
         }
     }
 

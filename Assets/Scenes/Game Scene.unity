@@ -1671,6 +1671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _coin: {fileID: 725976783}
   _hp: {fileID: 425664657}
+  _store_coin: {fileID: 0}
 --- !u!1 &1189157689
 GameObject:
   m_ObjectHideFlags: 0
@@ -2575,6 +2576,11 @@ MonoBehaviour:
   mana: 0
   floorTilemap: {fileID: 68881512}
   colisionTilemap: {fileID: 578358076}
+  treasureTilemap: {fileID: 1347316041}
+  treasureTiles:
+  - {fileID: 11400000, guid: b418ad52ab80c964aadd6c28024a29d1, type: 2}
+  - {fileID: 11400000, guid: fa3c296241084b6479454b1dda932025, type: 2}
+  - {fileID: 11400000, guid: 304df1aee8588a447a28b11e8d578b9c, type: 2}
 --- !u!1 &2127173415
 GameObject:
   m_ObjectHideFlags: 0

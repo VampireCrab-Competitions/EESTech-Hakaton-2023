@@ -24,8 +24,8 @@ public class terrain_map_generator : MonoBehaviour
     void Start()
     {
         map_size = transform.parent.GetComponent<grid_map_fields>().map_size;
-        int x = Random.Range((map_size - 1 - map_size / 8), (map_size - 1));
-        int y = Random.Range((map_size - 1 - map_size / 8), (map_size - 1));
+        int x = Random.Range((map_size / 2), (map_size - 1));
+        int y = Random.Range((map_size / 2), (map_size - 1));
         terrain_grid.SetTile(new Vector3Int(x, y, 0), exit_tile);
         Vector3 exit_coords = terrain_grid.CellToWorld(new Vector3Int(x, y, 0));
         exit_x = exit_coords.x;

@@ -1,13 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using System;   
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Tilemaps;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
 public class PlayerController : MonoBehaviour
 {
@@ -28,7 +25,7 @@ public class PlayerController : MonoBehaviour
     private int mana;
 
     [SerializeField]
-    private Tilemap floorTilemap;
+    public Tilemap floorTilemap;
 
     [SerializeField]
     private Tilemap colisionTilemap;
@@ -93,7 +90,12 @@ public class PlayerController : MonoBehaviour
             Vector3Int exit = treasureTilemap.WorldToCell(new Vector3(terrain_map_generator.exit_x, terrain_map_generator.exit_y,0));
             if (tile_coords == exit)
             {
-                SceneManager.LoadScene(0);
+                hasKey = false;
+                level_generator level_gen = GameObject.Find("Level Generator").GetComponent<level_generator>();
+                Object old_level = level_gen.level_instance;
+                
+                level_gen.MakeLevel();
+                //SceneManager.LoadScene(0);
             }
 
             if (treasureTilemap.HasTile(tile_coords))
@@ -133,48 +135,16 @@ public class PlayerController : MonoBehaviour
     
     private bool CanMove(Vector2 direction)
     {
+        if (floorTilemap == null)
+        {
+            return false;
+        }
         Vector3Int gridPosition = floorTilemap.WorldToCell(transform.position + (Vector3)direction);
         bool isExit = gridPosition == floorTilemap.WorldToCell(new Vector3(terrain_map_generator.exit_x, terrain_map_generator.exit_y, 0));
 
         return floorTilemap.HasTile(gridPosition) && 
                 ((hasKey && isExit) 
                 || !colisionTilemap.HasTile(gridPosition));
-    }
-
-    public int GetHealth()
-    {
-        return health;
-    }
-
-    public void SetHealth(int health)
-    {
-        health = health;
-    }
-    
-    public int GetMana()
-    {
-        return mana;
-    }
-
-    public void SetMana(int mana)
-    {
-        this.mana = mana;
-    }
-
-    public int GetArmor()
-    {
-        return armor;
-    }
-
-    public void SetArmor(int armor)
-    {
-        this.armor = armor;
-    }
-
-
-    public int GetCoins()
-    {
-        return coins;
     }
 }
 

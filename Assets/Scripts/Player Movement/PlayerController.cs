@@ -1,35 +1,23 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Tilemaps;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    public static int coins;
-    
-    [SerializeField]
-    public static int health=10;
+    [SerializeField] public static int coins;
 
-    [SerializeField]
-    private int armor;
+    [SerializeField] public static int health = 10;
 
-    [SerializeField]
-    private int mana;
-    
-    [SerializeField]
-    private Tilemap floorTilemap;
-    
-    [SerializeField]
-    private Tilemap colisionTilemap;
+    [SerializeField] private int armor;
+
+    [SerializeField] private int mana;
+
+    [SerializeField] private Tilemap floorTilemap;
+
+    [SerializeField] private Tilemap colisionTilemap;
 
     private PlayerMovement _controls;
-    
+
     private void Awake()
     {
         _controls = new PlayerMovement();
@@ -71,30 +59,20 @@ public class PlayerController : MonoBehaviour
     private bool CanMove(Vector2 direction)
     {
         Vector3Int gridPosition = floorTilemap.WorldToCell(transform.position + (Vector3)direction);
-        
-        return floorTilemap.HasTile(gridPosition) && !colisionTilemap.HasTile(gridPosition);
-    }
 
-    public int GetHealth()
-    {
-        return health;
-    }
-    
-    public void SetHealth(int health)
-    {
-        health = health;
+        return floorTilemap.HasTile(gridPosition) && !colisionTilemap.HasTile(gridPosition);
     }
 
     public int GetMana()
     {
         return mana;
     }
-    
+
     public void SetMana(int mana)
     {
         this.mana = mana;
     }
-    
+
     public int GetArmor()
     {
         return armor;
@@ -104,14 +82,24 @@ public class PlayerController : MonoBehaviour
     {
         this.armor = armor;
     }
-    
-    public int GetCoins()
-    {
-        return coins;
-    }
 
-    public void SetCoins(int coins)
-    {
-        coins = coins;
-    }
+    // public int GetCoins()
+    // {
+    //     return coins;
+    // }
+    //
+    // public void SetCoins(int coins)
+    // {
+    //     this.coins = coins;
+    // }
+
+    // public int GetHealth()
+    // {
+    //     return health;
+    // }
+    //
+    // public void SetHealth(int health)
+    // {
+    //     this.health = health;
+    // }
 }

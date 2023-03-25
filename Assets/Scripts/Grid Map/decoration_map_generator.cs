@@ -10,6 +10,7 @@ public class decoration_map_generator : MonoBehaviour
     public int decor_chance;
 
     private int map_size;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,8 @@ public class decoration_map_generator : MonoBehaviour
         {
             for (int y = 0; y < map_size; y++)
             {
-                if(Random.Range(0,100) <= decor_chance){
+                if (Random.Range(0, 100) <= decor_chance)
+                {
                     decoration_grid.SetTile(new Vector3Int(x, y, 0), tiles[Random.Range(0, tiles.Length)]);
                 }
             }
@@ -28,6 +30,5 @@ public class decoration_map_generator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 }

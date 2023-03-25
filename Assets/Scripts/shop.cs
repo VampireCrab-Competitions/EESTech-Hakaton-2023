@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class shop : MonoBehaviour
 {
-    public void BackToMenu() {
+    public void BackToMenu()
+    {
         SceneManager.LoadScene(0);
-
     }
 }

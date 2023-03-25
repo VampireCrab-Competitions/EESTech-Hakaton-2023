@@ -13,6 +13,7 @@ public class treasure_map : MonoBehaviour
     public Tile key_tile;
 
     private int map_size;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,13 +48,11 @@ public class treasure_map : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        
         //Destroy();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 }

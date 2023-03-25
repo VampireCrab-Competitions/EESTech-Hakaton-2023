@@ -15,10 +15,8 @@ public class terrain_map_generator : MonoBehaviour
     public Tile exit_tile;
     
 
-    [System.NonSerialized]
-    public static float exit_x;
-    [System.NonSerialized]
-    public static float exit_y;
+    [System.NonSerialized] public static float exit_x;
+    [System.NonSerialized] public static float exit_y;
 
     private int map_size;
 

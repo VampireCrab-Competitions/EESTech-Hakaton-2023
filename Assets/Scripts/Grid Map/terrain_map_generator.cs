@@ -12,6 +12,12 @@ public class terrain_map_generator : MonoBehaviour
     public Tile[] right_wall_tiles;
     public Tile upper_left_corner;
     public Tile upper_right_corner;
+    public Tile exit_tile;
+
+    [System.NonSerialized]
+    public static float exit_x;
+    [System.NonSerialized]
+    public static float exit_y;
 
     private int map_size;
 
@@ -19,7 +25,12 @@ public class terrain_map_generator : MonoBehaviour
     void Start()
     {
         map_size = transform.parent.GetComponent<grid_map_fields>().map_size;
-
+        int x = Random.Range((map_size - 1 - map_size / 8), (map_size - 1));
+        int y = Random.Range((map_size - 1 - map_size / 8), (map_size - 1));
+        terrain_grid.SetTile(new Vector3Int(x, y, 0), exit_tile);
+        Vector3 exit_coords = terrain_grid.CellToWorld(new Vector3Int(x, y, 0));
+        exit_x = exit_coords.x;
+        exit_y = exit_coords.y;
         InstantiateBorderWalls(map_size);
     }
 

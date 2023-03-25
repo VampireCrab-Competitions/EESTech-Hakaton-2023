@@ -1125,7 +1125,7 @@ GameObject:
   - component: {fileID: 605167177}
   - component: {fileID: 605167176}
   m_Layer: 0
-  m_Name: HP image
+  m_Name: HP Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1248,7 +1248,7 @@ GameObject:
   - component: {fileID: 725976784}
   - component: {fileID: 725976783}
   m_Layer: 0
-  m_Name: Coin text TMP
+  m_Name: Coin Text TMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1836,7 +1836,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b418ad52ab80c964aadd6c28024a29d1, type: 2}
   - {fileID: 11400000, guid: fa3c296241084b6479454b1dda932025, type: 2}
   - {fileID: 11400000, guid: 304df1aee8588a447a28b11e8d578b9c, type: 2}
-  treasure_chance: 0
+  treasure_chance: 10
 --- !u!483693784 &1347316040
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -2032,7 +2032,7 @@ GameObject:
   - component: {fileID: 1563943357}
   - component: {fileID: 1563943356}
   m_Layer: 0
-  m_Name: Coin image
+  m_Name: Coin Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

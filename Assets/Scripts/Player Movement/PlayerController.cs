@@ -79,12 +79,19 @@ public class PlayerController : MonoBehaviour
                 if (String.Equals(tile.name, treasureTiles[0].name))
                 {
                     coins += 1;
+                    GameObject coin_disp = GameObject.Find("Coin Text TMP");
+                    coin_disp.GetComponent<TextMeshProUGUI>().text = coins.ToString();
+
                 } else if (String.Equals(tile.name, treasureTiles[1].name))
                 {
-                    health += 2;
+                    health += 4;
+                    GameObject hp_disp = GameObject.Find("HP Text TMP");
+                    hp_disp.GetComponent<TextMeshProUGUI>().text = health.ToString();
                 } else if (String.Equals(tile.name, treasureTiles[2].name))
                 {
                     coins += 5;
+                    GameObject coin_disp = GameObject.Find("Coin Text TMP");
+                    coin_disp.GetComponent<TextMeshProUGUI>().text = coins.ToString();
                 }
                 treasureTilemap.SetTile(tile_coords, null);
             }
@@ -131,10 +138,5 @@ public class PlayerController : MonoBehaviour
     public int GetCoins()
     {
         return coins;
-    }
-
-    public void SetCoins(int coins)
-    {
-        coins = coins;
     }
 }

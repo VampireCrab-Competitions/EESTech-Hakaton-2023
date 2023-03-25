@@ -115,5 +115,45 @@ public class PlayerController : MonoBehaviour
         return floorTilemap.HasTile(gridPosition) && !colisionTilemap.HasTile(gridPosition);
     }
     
+    public int GetMana()
+    {
+        return mana;
+    }
+
+    public void SetMana(int mana)
+    {
+        this.mana = mana;
+    }
+
+    public int GetArmor()
+    {
+        return armor;
+    }
+
+    public void SetArmor(int armor)
+    {
+        this.armor = armor;
+    }
+
+    // public int GetCoins()
+    // {
+    //     return coins;
+    // }
+    //
+    // public void SetCoins(int coins)
+    // {
+    //     this.coins = coins;
+    // }
+
+    // public int GetHealth()
+    // {
+    //     return health;
+    // }
+    //
+    // public void SetHealth(int health)
+    // {
+    //     this.health = health;
+    // }
+    
 }
 

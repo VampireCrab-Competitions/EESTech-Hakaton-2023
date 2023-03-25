@@ -34,7 +34,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Tile[] treasureTiles;
 
+    [SerializeField]
+    private Tile key_tile;
+
     private PlayerMovement _controls;
+    private bool hasKey;
     
     private void Awake()
     {
@@ -55,6 +59,9 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         coins = 0;
+        hasKey = false;
+        GameObject key_disp = GameObject.Find("Hatch Key");
+        key_disp.GetComponent<Image>().enabled = false;
         _controls.Main.Movement.performed += context => Move(context.ReadValue<Vector2>());
     }
 
@@ -92,6 +99,12 @@ public class PlayerController : MonoBehaviour
                     coins += 5;
                     GameObject coin_disp = GameObject.Find("Coin Text TMP");
                     coin_disp.GetComponent<TextMeshProUGUI>().text = coins.ToString();
+                } else if (String.Equals(tile.name, key_tile.name))
+                {
+                    GameObject k_disp = GameObject.Find("Hatch Key");
+                    //k_disp.GetComponent<Image>().enabled = true;
+                    k_disp.GetComponent<Image>().enabled = true;
+                    hasKey = true;
                 }
                 treasureTilemap.SetTile(tile_coords, null);
             }

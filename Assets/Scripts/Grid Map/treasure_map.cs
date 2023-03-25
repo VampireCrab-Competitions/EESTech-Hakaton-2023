@@ -10,6 +10,7 @@ public class treasure_map : MonoBehaviour
     public Tilemap treasure_grid;
     public Tile[] tiles;
     public int treasure_chance;
+    public Tile key_tile;
 
     private int map_size;
     // Start is called before the first frame update
@@ -26,6 +27,22 @@ public class treasure_map : MonoBehaviour
                 }
             }
         }
+
+        int x1;
+        int y1;
+
+        while (true)
+        {
+            x1 = Random.Range((0 + map_size / 8), (map_size - 1));
+            y1 = Random.Range((0 + map_size / 8), (map_size - 1));
+
+            if(!(x1 == terrain_map_generator.exit_x && y1 == terrain_map_generator.exit_y))
+            {
+                break;
+            }
+        }
+        treasure_grid.SetTile(new Vector3Int(x1, y1, 0), key_tile);
+       
     }
 
     private void OnCollisionEnter2D(Collision2D col)

@@ -33,12 +33,14 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update 
     void Start()
     {
+        Debug.Log("Nesto");
         _controls.Main.Movement.performed += context => Move(context.ReadValue<Vector2>());
     }
 
     private void Move(Vector2 direction)
     {
         direction = new Vector2(direction.x * 0.16f, direction.y * 0.16f);
+        Debug.Log("Crkni");
         if (CanMove(direction))
         {
             transform.position += (Vector3)direction;

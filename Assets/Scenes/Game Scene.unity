@@ -489,7 +489,7 @@ GameObject:
   - component: {fileID: 425664658}
   - component: {fileID: 425664657}
   m_Layer: 0
-  m_Name: HP text TMP
+  m_Name: HP Text TMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -866,6 +866,7 @@ RectTransform:
   - {fileID: 89116988}
   - {fileID: 1881828309}
   - {fileID: 1983559022}
+  - {fileID: 793327696}
   m_Father: {fileID: 472995397}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1145,7 +1146,7 @@ GameObject:
   - component: {fileID: 605167177}
   - component: {fileID: 605167176}
   m_Layer: 0
-  m_Name: HP image
+  m_Name: HP Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1268,7 +1269,7 @@ GameObject:
   - component: {fileID: 725976784}
   - component: {fileID: 725976783}
   m_Layer: 0
-  m_Name: Coin text TMP
+  m_Name: Coin Text TMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1390,6 +1391,82 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 725976781}
+  m_CullTransparentMesh: 1
+--- !u!1 &793327695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 793327696}
+  - component: {fileID: 793327698}
+  - component: {fileID: 793327697}
+  m_Layer: 0
+  m_Name: Hatch Key
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &793327696
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793327695}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 487874578}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 10, y: -8}
+  m_SizeDelta: {x: 10, y: 10}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &793327697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793327695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -1138720139, guid: 06ca0da7bcdff1349910b6255cd0a7a6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &793327698
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793327695}
   m_CullTransparentMesh: 1
 --- !u!1 &851206020
 GameObject:
@@ -1856,7 +1933,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b418ad52ab80c964aadd6c28024a29d1, type: 2}
   - {fileID: 11400000, guid: fa3c296241084b6479454b1dda932025, type: 2}
   - {fileID: 11400000, guid: 304df1aee8588a447a28b11e8d578b9c, type: 2}
-  treasure_chance: 0
+  treasure_chance: 10
+  key_tile: {fileID: 11400000, guid: 1f3e3ebb4ac203d4e9f6d19a39842c41, type: 2}
 --- !u!483693784 &1347316040
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -2052,7 +2130,7 @@ GameObject:
   - component: {fileID: 1563943357}
   - component: {fileID: 1563943356}
   m_Layer: 0
-  m_Name: Coin image
+  m_Name: Coin Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2596,6 +2674,12 @@ MonoBehaviour:
   mana: 0
   floorTilemap: {fileID: 68881512}
   colisionTilemap: {fileID: 578358076}
+  treasureTilemap: {fileID: 1347316041}
+  treasureTiles:
+  - {fileID: 11400000, guid: b418ad52ab80c964aadd6c28024a29d1, type: 2}
+  - {fileID: 11400000, guid: fa3c296241084b6479454b1dda932025, type: 2}
+  - {fileID: 11400000, guid: 304df1aee8588a447a28b11e8d578b9c, type: 2}
+  key_tile: {fileID: 11400000, guid: 1f3e3ebb4ac203d4e9f6d19a39842c41, type: 2}
 --- !u!1 &2127173415
 GameObject:
   m_ObjectHideFlags: 0

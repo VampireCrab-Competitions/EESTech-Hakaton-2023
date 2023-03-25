@@ -13,6 +13,7 @@ public class terrain_map_generator : MonoBehaviour
     public Tile upper_left_corner;
     public Tile upper_right_corner;
     public Tile exit_tile;
+    
 
     [System.NonSerialized] public static float exit_x;
     [System.NonSerialized] public static float exit_y;
@@ -29,6 +30,8 @@ public class terrain_map_generator : MonoBehaviour
         Vector3 exit_coords = terrain_grid.CellToWorld(new Vector3Int(x, y, 0));
         exit_x = exit_coords.x;
         exit_y = exit_coords.y;
+
+
         InstantiateBorderWalls(map_size);
     }
 

@@ -10,12 +10,10 @@ public class compass_controller : MonoBehaviour
 
     private GameObject terrain_map; 
     private float rotation;
-    private float prev_rot;
 
     // Start is called before the first frame update
     void Start()
     {
-        prev_rot = 0;
     }
 
     // Update is called once per frame
@@ -23,13 +21,14 @@ public class compass_controller : MonoBehaviour
     {
         rotation = (terrain_map_generator.exit_y - player.transform.position.y) / (terrain_map_generator.exit_x - player.transform.position.x);
         rotation = Mathf.Atan(rotation) * 180.0f / Mathf.PI - 90.0f;
-        if (rotation - prev_rot < -90.0f)
+        if(terrain_map_generator.exit_y - player.transform.position.y < 0 || terrain_map_generator.exit_x - player.transform.position.x > 0)
         {
-            compass_hand.transform.Rotate(new Vector3(0, 0, rotation - prev_rot - 180.0f));
-        } else
-        {
-            compass_hand.transform.Rotate(new Vector3(0, 0, rotation - prev_rot));
+            rotation += 180.0f;
         }
-        prev_rot = rotation;
+        if (terrain_map_generator.exit_y - player.transform.position.y < 0 && terrain_map_generator.exit_x - player.transform.position.x < 0)
+        {
+            rotation -= 180.0f;
+        }
+        compass_hand.transform.eulerAngles = new Vector3(0.0f, 0.0f, rotation);
     }
 }

@@ -47,19 +47,4 @@ public class EnemyCharacter : MonoBehaviour
     {
         this.armor = armor;
     }
-    
-    public void TakeDamage(int damage)
-    {
-        health -= damage;
-
-        if (health <= 0)
-        {
-            EnemyKilled();
-        }
-    }
-
-    public void EnemyKilled()
-    {
-        Destroy(gameObject);
-    }
 }

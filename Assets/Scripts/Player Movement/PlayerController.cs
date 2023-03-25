@@ -7,11 +7,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Tilemaps;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+
+    public event Action PlayerHasMoved = delegate { };
+
     [SerializeField]
     public static int coins;
+
 
     [SerializeField]
     public static int health = 10;
@@ -80,6 +85,9 @@ public class PlayerController : MonoBehaviour
         if (CanMove(direction))
         {
             transform.position += (Vector3)direction;
+            
+            PlayerHasMoved?.Invoke();
+
             Vector3Int tile_coords = treasureTilemap.WorldToCell(transform.position);
 
             Vector3Int exit = treasureTilemap.WorldToCell(new Vector3(terrain_map_generator.exit_x, terrain_map_generator.exit_y,0));
@@ -122,7 +130,7 @@ public class PlayerController : MonoBehaviour
         }
         
     }
-
+    
     private bool CanMove(Vector2 direction)
     {
         Vector3Int gridPosition = floorTilemap.WorldToCell(transform.position + (Vector3)direction);
@@ -142,7 +150,7 @@ public class PlayerController : MonoBehaviour
     {
         health = health;
     }
-
+    
     public int GetMana()
     {
         return mana;
@@ -163,8 +171,10 @@ public class PlayerController : MonoBehaviour
         this.armor = armor;
     }
 
+
     public int GetCoins()
     {
         return coins;
     }
 }
+
